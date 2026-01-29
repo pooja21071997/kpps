@@ -1,1 +1,48 @@
-<p>mandatory-disclosure works!</p>
+<div class="container my-5 ">
+  <h3 class="text-danger fw-bold">DOCUMENTS AND INFORMATION</h3>
+  <div class="line" ></div>
+
+  @for (doc of documents; track doc) {
+    <div class="row align-items-center py-3 border-bottom">
+      <div class="col-md-8">
+        <p class="fw-semibold  mb-0">
+         {{ doc.title }}
+        </p>
+      </div>
+
+      <div class="col-md-4 text-md-end mt-2 mt-md-0">
+        <button class="btn btn-warning me-2" (click)="viewFile(doc.file)">
+          <i class="fa-solid fa-eye"></i> View
+        </button>
+
+        <button class="btn btn-warning" (click)="downloadFile(doc.file)">
+          <i class="fa-solid fa-download"></i> Download
+        </button>
+      </div>
+    </div>
+  }
+</div>
+<div class="container my-5">
+  <h3 class="text-danger fw-bold">RESULTS AND ACADEMICS</h3>
+  <div class="line" ></div>
+
+  @for (doc of other; track doc) {
+    <div class="row align-items-center py-3 border-bottom">
+      <div class="col-md-8">
+        <p class="fw-semibold  mb-0">
+          {{ doc.title }}
+        </p>
+      </div>
+
+      <div class="col-md-4 text-md-end mt-2 mt-md-0">
+        <button class="btn btn-warning me-2" (click)="viewOtherFile(doc.file)">
+          <i class="fa-solid fa-eye"></i> View
+        </button>
+
+        <button class="btn btn-warning" (click)="downloadOtherFile(doc.file)">
+          <i class="fa-solid fa-download"></i> Download
+        </button>
+      </div>
+    </div>
+  }
+</div>

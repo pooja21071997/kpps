@@ -1,11 +1,46 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import {  PdfViewerModule } from 'ng2-pdf-viewer';
 
 @Component({
   selector: 'app-pre-primary',
-  imports: [],
+  imports: [CommonModule, PdfViewerModule],
   templateUrl: './pre-primary.html',
   styleUrl: './pre-primary.css',
 })
 export class PrePrimary {
+pdfSrc = '/assets/files/pre primary.pdf';
+//pdfSrc = 'https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf';
+
+page = 1;
+totalPages = 0;
+zoom = 0.4;
+
+afterLoad(pdf: any) {
+  this.totalPages = pdf.numPages;
+  this.fitToPage();
+}
+
+fitToPage() {
+  // Adjust zoom for screen size (trial-tested values)
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth < 768) {
+    this.zoom = 0.4;
+  } else if (screenWidth < 1200) {
+    this.zoom = 0.8;
+  } else {
+    this.zoom = 0.4;
+  }
+}
+
+nextPage() {
+  if (this.page < this.totalPages) this.page++;
+}
+
+prevPage() {
+  if (this.page > 1) this.page--;
+}
+
 
 }
