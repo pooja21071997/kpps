@@ -1,0 +1,636 @@
+/* ===============================
+   SECTION BACKGROUND
+================================ */
+.institution-section {
+  background: linear-gradient(135deg, #f8fafc, #eef2f7);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating soft background circle */
+.institution-section::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: rgba(10, 35, 66, 0.05);
+  border-radius: 50%;
+  top: -100px;
+  right: -120px;
+  animation: floatBg 12s ease-in-out infinite;
+}
+
+/* ===============================
+   IMAGE EFFECT
+================================ */
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  transition: 0.6s;
+}
+
+.image-wrapper img {
+  transition: transform 1s ease;
+}
+
+/* Smooth zoom on hover */
+.image-wrapper:hover img {
+  transform: scale(1.07);
+}
+
+/* Floating animation */
+.image-wrapper {
+  animation: floatImage 6s ease-in-out infinite;
+}
+
+/* Badge */
+.image-badge {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: #0a2342;
+  color: #f4d38a;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 3s infinite;
+}
+
+/* ===============================
+   CONTENT BOX
+================================ */
+.content-box {
+  background: rgba(255,255,255,0.9);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  transition: 0.5s;
+}
+
+.content-box:hover {
+  transform: translateY(-5px);
+}
+
+/* Title */
+.institution-title {
+  color: #0a2342;
+  font-size: 26px;
+}
+
+/* Animated underline */
+.title-line {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #c89b3c, #f4d38a);
+  margin: 12px 0 20px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: expandLine 1.2s forwards;
+}
+
+/* ===============================
+   SCROLL REVEAL ANIMATION
+================================ */
+.animate-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  animation: slideLeft 1.2s forwards;
+}
+
+.animate-right {
+  opacity: 0;
+  transform: translateX(60px);
+  animation: slideRight 1.2s forwards;
+}
+
+/* ===============================
+   KEYFRAMES
+================================ */
+@keyframes slideLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes expandLine {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes floatImage {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes floatBg {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(30px); }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(10,35,66,0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(10,35,66,0); }
+  100% { box-shadow: 0 0 0 0 rgba(10,35,66,0); }
+}
+.institution-title:hover .title-line{
+    width: 190px;
+}
+/* =====================================
+   SECTION BACKGROUND
+===================================== */
+.inspiration-section {
+  background: linear-gradient(135deg, #f9fbff, #eef3f9);
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+/* Decorative floating circle */
+.inspiration-section::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(10, 35, 66, 0.05);
+  border-radius: 50%;
+  top: -150px;
+  left: -150px;
+  animation: floatBg 14s ease-in-out infinite;
+}
+
+/* =====================================
+   QUOTE CARD
+===================================== */
+.quote-card {
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(12px);
+  padding: 50px;
+  border-radius: 25px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+  position: relative;
+  animation: fadeUp 1.2s ease forwards;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Quote Icon */
+.quote-icon {
+  font-size: 50px;
+  color: #c89b3c;
+  animation: pulse 3s infinite;
+}
+
+/* Quote Text */
+.quote-text {
+  font-size: 26px;
+  font-style: italic;
+  color: #2c3e50;
+  line-height: 1.7;
+  margin-top: 20px;
+}
+
+/* Author */
+.quote-author {
+  margin-top: 25px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #0a2342;
+}
+
+/* =====================================
+   IMAGE EFFECT
+===================================== */
+.founder-wrapper {
+  position: relative;
+  display: inline-block;
+  animation: floatImage 6s ease-in-out infinite;
+}
+
+.founder-img {
+  border-radius: 20px;
+  max-height: 420px;
+  object-fit: cover;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  transition: 0.6s ease;
+}
+
+/* Hover glow */
+.founder-wrapper:hover .founder-img {
+  transform: scale(1.05);
+  box-shadow: 0 30px 60px rgba(200,155,60,0.4);
+}
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatImage {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes floatBg {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(30px); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+/* ===============================
+   SECTION BACKGROUND
+================================ */
+.subsection-highlight {
+  background: linear-gradient(135deg, #f8fbff, #eef3f8);
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+/* Decorative floating circle */
+.subsection-highlight::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(10, 35, 66, 0.05);
+  border-radius: 50%;
+  top: -150px;
+  right: -150px;
+  animation: floatBg 12s ease-in-out infinite;
+}
+
+/* ===============================
+   HEADING
+================================ */
+.section-heading h2 {
+  color: #0a2342;
+  font-size: 32px;
+}
+
+.heading-line {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #c89b3c, #f4d38a);
+  margin: 12px auto 0;
+  border-radius: 5px;
+  animation: expandLine 1s ease forwards;
+  transform: scaleX(0);
+  transform-origin: center;
+}
+
+/* ===============================
+   CARDS
+================================ */
+.sub-card {
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(10px);
+  padding: 40px 25px;
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  transition: 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover lift */
+.sub-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+}
+
+/* Soft glowing border on hover */
+.sub-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 25px;
+  border: 2px solid transparent;
+  background: linear-gradient(45deg, #c89b3c, #0a2342) border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.sub-card:hover::after {
+  opacity: 1;
+}
+
+/* ===============================
+   ICON
+================================ */
+.icon-wrapper {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0a2342, #163b6d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.6s ease;
+}
+
+.icon-wrapper i {
+  font-size: 35px;
+  color: #f4d38a;
+}
+
+/* Rotate icon on hover */
+.sub-card:hover .icon-wrapper {
+  transform: rotateY(360deg);
+}
+
+/* Text */
+.sub-card h4 {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #0a2342;
+}
+
+.sub-card p {
+  color: #666;
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ===============================
+   ANIMATIONS
+================================ */
+@keyframes expandLine {
+  to { transform: scaleX(1); }
+}
+
+@keyframes floatBg {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(25px); }
+}
+/* ===============================
+   SECTION BACKGROUND
+================================ */
+.principal-section {
+  background: linear-gradient(135deg, #f8fbff, #eef2f8);
+  position: relative;
+  overflow: hidden;
+  padding: 90px 0;
+}
+
+/* Decorative soft floating shape */
+.principal-section::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: rgba(10, 35, 66, 0.05);
+  border-radius: 50%;
+  top: -200px;
+  right: -150px;
+  animation: floatBg 14s ease-in-out infinite;
+}
+
+/* ===============================
+   IMAGE DESIGN
+================================ */
+.principal-img-wrapper {
+  position: relative;
+  display: inline-block;
+  animation: floatImage 6s ease-in-out infinite;
+}
+
+.principal-img {
+  border-radius: 25px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  transition: 0.6s ease;
+}
+
+.principal-img-wrapper:hover .principal-img {
+  transform: scale(1.05);
+  box-shadow: 0 30px 60px rgba(200,155,60,0.4);
+}
+
+/* Badge */
+.principal-badge {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 65px;
+  height: 65px;
+  background: linear-gradient(135deg, #0a2342, #163b6d);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f4d38a;
+  font-size: 22px;
+  animation: pulse 3s infinite;
+}
+
+/* ===============================
+   CONTENT CARD
+================================ */
+.principal-card {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(10px);
+  padding: 50px;
+  border-radius: 25px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+  animation: fadeUp 1.2s ease forwards;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Title */
+.principal-title {
+  color: #0a2342;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+/* Animated underline */
+.title-line {
+  width: 90px;
+  height: 4px;
+  background: linear-gradient(to right, #c89b3c, #f4d38a);
+  border-radius: 5px;
+  margin: 12px 0 25px;
+  animation: expandLine 1.2s forwards;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+/* Text */
+.principal-text p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+/* Signature */
+.signature {
+  margin-top: 25px;
+  font-style: italic;
+  color: #0a2342;
+}
+
+/* ===============================
+   ANIMATIONS
+================================ */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes expandLine {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes floatImage {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes floatBg {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(30px); }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(10,35,66,0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(10,35,66,0); }
+  100% { box-shadow: 0 0 0 0 rgba(10,35,66,0); }
+}
+/* ===============================
+   SECTION BACKGROUND
+================================ */
+.timing-section {
+  background: linear-gradient(135deg, #f8fbff, #eef3f9);
+  position: relative;
+  overflow: hidden;
+  padding: 90px 0;
+}
+
+/* Floating decorative circle */
+.timing-section::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: rgba(10, 35, 66, 0.05);
+  border-radius: 50%;
+  top: -150px;
+  left: -150px;
+  animation: floatBg 14s ease-in-out infinite;
+}
+
+/* ===============================
+   HEADING
+================================ */
+.section-heading h2 {
+  font-weight: 700;
+  color: #0a2342;
+}
+
+.section-heading i {
+  color: #c89b3c;
+}
+
+.heading-line {
+  width: 90px;
+  height: 4px;
+  background: linear-gradient(to right, #c89b3c, #f4d38a);
+  margin: 10px auto 0;
+  border-radius: 5px;
+  animation: expandLine 1s forwards;
+  transform: scaleX(0);
+}
+
+/* ===============================
+   TABLE CARD
+================================ */
+.table-card {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  padding: 30px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+  transition: 0.5s ease;
+  animation: fadeUp 1.2s ease forwards;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Hover lift */
+.table-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 35px 70px rgba(0,0,0,0.12);
+}
+
+/* Table Styling */
+.table th {
+  color: #0a2342;
+  font-weight: 600;
+}
+
+.table td {
+  color: #555;
+}
+
+/* Row hover effect */
+.table tbody tr {
+  transition: 0.3s ease;
+}
+
+.table tbody tr:hover {
+  background: rgba(200,155,60,0.08);
+  transform: scale(1.01);
+}
+
+/* ===============================
+   ANIMATIONS
+================================ */
+@keyframes expandLine {
+  to { transform: scaleX(1); }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatBg {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(25px); }
+}
