@@ -1,0 +1,91 @@
+/* ============================= */
+/*         ROBO LAB SECTION      */
+/* ============================= */
+
+.robo-section {
+  padding: 70px 0;
+  position: relative;
+}
+
+/* Image Styling */
+.robo-section img {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  border-radius: 20px;
+}
+
+.robo-section img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Innovation Badge */
+.robo-badge {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background: linear-gradient(45deg, #0d6efd, #3b82f6);
+  border-radius: 0 20px 20px 0;
+  animation: glow 2s infinite alternate;
+}
+
+/* Glow animation */
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px rgba(13, 110, 253, 0.4);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(13, 110, 253, 0.8);
+  }
+}
+
+/* Heading Style */
+.robo-heading {
+  font-size: 32px;
+  font-weight: 700;
+  position: relative;
+}
+
+
+
+/* Feature Cards */
+.robo-card {
+  border-radius: 18px;
+  transition: all 0.4s ease;
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+}
+
+.robo-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(13, 110, 253, 0.15);
+  border-color: #0d6efd;
+}
+
+/* Card Icon */
+.robo-card i {
+  font-size: 18px;
+  transition: transform 0.4s ease;
+}
+
+.robo-card:hover i {
+  transform: rotate(10deg) scale(1.2);
+  color: #0d6efd;
+}
+
+/* Paragraph Text */
+.robo-section p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #6c757d;
+}
+
+/* Responsive Improvements */
+@media (max-width: 768px) {
+  .robo-heading {
+    font-size: 24px;
+  }
+
+  .robo-section {
+    padding: 40px 0;
+  }
+}

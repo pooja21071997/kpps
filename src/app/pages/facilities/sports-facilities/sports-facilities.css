@@ -1,0 +1,77 @@
+/* Shared Feature Section Background */
+.feature-section {
+  background: linear-gradient(135deg, #eef2ff, #f8fbff);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card Styling */
+.feature-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 80, 0.08);
+  transition: all 0.4s ease;
+    border-left: 5px solid #007bff;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(0, 0, 80, 0.15);
+}
+
+/* Heading */
+.section-header h2 {
+  color: #0f1c4d;
+  display: flex;
+  align-items: center;
+}
+
+.section-header i {
+  color: #2b7cff;
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+/* Animated Line */
+.animated-line {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #2b7cff, #6c63ff);
+  margin-top: 10px;
+  border-radius: 10px;
+  animation: expandLine 2s ease-in-out infinite alternate;
+}
+
+/* Image Styling */
+.feature-img-wrapper {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 100, 0.15);
+  transition: all 0.4s ease;
+}
+
+.feature-img-wrapper img {
+  width: 100%;
+  max-height: 700px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.feature-img-wrapper:hover img {
+  transform: scale(1.08);
+}
+
+.feature-img-wrapper:hover {
+  transform: translateY(-10px);
+}
+
+/* Animations */
+@keyframes floatIcon {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes expandLine {
+  from { width: 60px; }
+  to { width: 120px; }
+}
